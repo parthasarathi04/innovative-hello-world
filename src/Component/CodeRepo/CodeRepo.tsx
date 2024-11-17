@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark as codeStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ReactMarkdown from 'react-markdown';
 import "./CodeRepo.css";
 
 const filePath = ["Code/_.cpp", "Code/___.cpp", "Code/README.md"];
@@ -71,13 +72,19 @@ const CodeRepo = () => {
               filePath[selectedIndex - 1].lastIndexOf("/") + 1
             )}
           </div>
-          <SyntaxHighlighter
-            language="cpp"
-            style={codeStyle}
-            className="coding"
-          >
-            {selectedCode}
-          </SyntaxHighlighter>
+          {selectedIndex !== 3 && (
+            <SyntaxHighlighter
+              language="cpp"
+              style={codeStyle}
+              className="coding"
+            >
+              {selectedCode}
+            </SyntaxHighlighter>
+          )}
+
+          {
+            selectedIndex === 3 && <ReactMarkdown>{selectedCode}</ReactMarkdown>
+          }
         </div>
       </div>
     </>
