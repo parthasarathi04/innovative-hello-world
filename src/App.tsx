@@ -1,20 +1,16 @@
-import './App.css'
-import CodeRepo from './Component/CodeRepo/CodeRepo'
-
+import "./App.css";
+import CodeRepo from "./Component/CodeRepo/CodeRepo";
 function App() {
-
   return (
     <>
-      <div className='nav'>
+      <div className="nav">
         <div>worst</div>
         <div>HELLO WORLD</div>
         <div>slowest, weirdest but most innovative</div>
       </div>
-
       <CodeRepo />
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
