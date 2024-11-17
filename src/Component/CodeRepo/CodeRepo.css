@@ -86,19 +86,22 @@
 
 @media screen and (max-width: 900px) {
     .repo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: block;
     }
 
     .file-manager {
-        min-width: 80%;
-        max-height: 10px !important;
+        min-width: 90%;
+        min-height: 10vh;
         position: static;
+        max-height: fit-content;
+        padding: 0;
+        margin: auto;
+        margin-bottom: 5vh;
     }
 
     .code {
+        min-width: 95%;
         border-left: none;
+        margin: auto;
     }
 }
