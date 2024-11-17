@@ -5,8 +5,10 @@ import "./CodeRepo.css";
 
 const filePath = ["Code/_.cpp", "Code/___.cpp", "Code/README.md"];
 
+const defaultFile = 1;
+
 const CodeRepo = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(3);
+  const [selectedIndex, setSelectedIndex] = useState<number>(defaultFile);
   const [selectedCode, setSelectedCode] = useState<string>("");
 
   const getCode = async (index: number) => {
@@ -23,7 +25,7 @@ const CodeRepo = () => {
   };
 
   useEffect(() => {
-    getCode(3);
+    getCode(defaultFile);
   }, []);
 
   const updateSelection = (index: number) => {
@@ -63,10 +65,12 @@ const CodeRepo = () => {
           </div>
         </div>
         <div className="code">
-          CODE:{" "}
-          {filePath[selectedIndex - 1].substring(
-            filePath[selectedIndex - 1].lastIndexOf("/") + 1
-          )}
+          <div className="code-name">
+            CODE:{" "}
+            {filePath[selectedIndex - 1].substring(
+              filePath[selectedIndex - 1].lastIndexOf("/") + 1
+            )}
+          </div>
           <SyntaxHighlighter
             language="cpp"
             style={codeStyle}
